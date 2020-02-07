@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="hu" id="html" class="no-js" {{ sonata_seo_html_attributes() }}>
+<head {{ sonata_seo_head_attributes() }}>
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 1.0, user-scalable = no">
+    <meta name="format-detection" content="telephone=no">
+    {{ sonata_seo_title() }}
+    {{ sonata_seo_metadatas() }}
+    <meta name="author" content="webery">
+    <meta name="description" content="RPS">
+    <meta name="keywords" content="RPS">
+
+    <script type="text/javascript">
+        var $htmlClasses = document.getElementById('html');
+        $htmlClasses.className = $htmlClasses.className.replace(/(\s|^)no-js(\s|$)/, ' ').replace(/(\s$)(^\s)/, '');
+    </script>
+
+    {% block stylesheets %}{% endblock %}
+{#    {{ encore_entry_link_tags('app') }}#}
+{#    {{ encore_entry_script_tags('app') }}#}
+{#    {% include 'CoreSonataAdminBundle::anticlickjacking.html.twig' %}#}
+</head>
+
+<body>
+{% block body %}{% endblock %}
+</body>
+</html>

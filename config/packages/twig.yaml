@@ -1,0 +1,21 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+    form_themes:
+        - '@SonataCore/Form/datepicker.html.twig'
+        - '@CoreUser/Form/fields.html.twig'
+        - '@ApplicationForms/Form/multipleFields.html.twig'
+        - '@ApplicationForms/Form/kresz.html.twig'
+        - '@ApplicationForms/Form/kozossegi.html.twig'
+        - '@ApplicationForms/Form/rajz.html.twig'
+        - '@ApplicationForms/Form/zebra.html.twig'
+        - '@ApplicationForms/Form/elsosegely.html.twig'
+        - '@ApplicationForms/Form/szurobusz.html.twig'
+        - '@ApplicationForms/Form/fuss.html.twig'
+        - 'form/fields.html.twig'
+        - 'form/form_admin_fields.html.twig'
+        - '@CoreChunkUpload/Form/fields.html.twig'
+    globals:
+        site_domain: '%site_domain%'
+

@@ -1,0 +1,42 @@
+doctrine:
+    dbal:
+        # configure these for your database server
+        driver: 'pdo_mysql'
+        server_version: '5.7'
+        charset: utf8mb4
+        default_table_options:
+            charset: utf8mb4
+            collate: utf8mb4_unicode_ci
+
+        url: '%env(resolve:DATABASE_URL)%'
+        types:
+            json: Sonata\Doctrine\Types\JsonType
+            encrypted_data_string: DoctrineEncryptedFieldTypeBundle\Types\EncryptedDataStringType
+            encrypted_data_text: DoctrineEncryptedFieldTypeBundle\Types\EncryptedDataTextType
+            encrypted_data_datetime: DoctrineEncryptedFieldTypeBundle\Types\EncryptedDataDateTimeType
+            encrypted_data_json: DoctrineEncryptedFieldTypeBundle\Types\EncryptedDataJsonType
+    orm:
+        auto_generate_proxy_classes: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+        mappings:
+            App:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/App/Entity'
+                prefix: 'App\Entity'
+                alias: App
+        filters:
+            soft-deleteable:
+                class: Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter
+                enabled: true
+        resolve_target_entities:
+            Sonata\ClassificationBundle\Model\CategoryInterface: Core\ClassificationBundle\Entity\Category
+            Sonata\ClassificationBundle\Model\TagInterface: Core\ClassificationBundle\Entity\Tag
+            Sonata\MediaBundle\Model\MediaInterface: App\Application\Sonata\MediaBundle\Entity\Media
+            Sonata\MediaBundle\Model\GalleryInterface: App\Application\Sonata\MediaBundle\Entity\Gallery
+            FOS\UserBundle\Model\UserInterface: App\Application\Sonata\UserBundle\Entity\User
+            Core\ContentsBundle\Entity\FullFeaturedContentInterface: Core\ContentsBundle\Entity\FullFeaturedContent
+        dql:
+            string_functions:
+                MATCH: Core\ContentsBundle\DQL\MatchAgainstFunction

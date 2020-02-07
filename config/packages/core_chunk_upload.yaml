@@ -1,0 +1,2 @@
+core_chunk_upload:
+    media_class: App\Application\Sonata\MediaBundle\Entity\Media

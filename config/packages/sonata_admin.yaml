@@ -1,0 +1,28 @@
+sonata_admin:
+    title: 'GABA admin'
+    title_logo: '/build/img/base/apple-touch-icon.jpg'
+    dashboard:
+        blocks:
+            - { type: sonata.admin.block.admin_list, position: left }
+    assets:
+        extra_stylesheets:
+            - bundles/sonatatranslation/css/sonata-translation.css
+
+        extra_javascripts:
+            - bundles/corechunkupload/js/jquery.ui.widget.js
+            - bundles/corechunkupload/js/jquery.iframe-transport.js
+            - bundles/corechunkupload/js/jquery.fileupload.js
+            - bundles/applicationtender/app-admin.js
+
+    security:
+        handler: sonata.admin.security.handler.role
+
+        role_admin: ROLE_ADMIN
+        role_super_admin: ROLE_SUPER_ADMIN
+
+    templates:
+        layout:  'admin_standard_layout.html.twig'
+
+    options:
+        use_select2:    true
+    search: false

@@ -1,0 +1,17 @@
+services:
+    App\Application\Sonata\UserBundle\Admin\Extension\UserAdminSecurityRulesAdminExtension:
+        class: App\Application\Sonata\UserBundle\Admin\Extension\UserAdminSecurityRulesAdminExtension
+        autowire: true
+        tags:
+            - { name: 'sonata.admin.extension', target: sonata.user.admin.user }
+
+
+    App\Application\Sonata\UserBundle\Security\UsernamePasswordRecaptchaFormAuthenticationListener:
+        class: App\Application\Sonata\UserBundle\Security\UsernamePasswordRecaptchaFormAuthenticationListener
+        abstract: true
+        parent: 'security.authentication.listener.form'
+        autowire: false
+        autoconfigure: false
+        public: false
+        calls:
+            - [setReCaptcha, ['@ReCaptcha\ReCaptcha']]

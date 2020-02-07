@@ -1,0 +1,49 @@
+#index:
+#    path: /
+#    Controller: App\Controller\DefaultController::index
+
+#gallery:
+#    resource: '@SonataMediaBundle/Resources/config/routing/gallery.xml'
+#    prefix: /media/gallery
+media:
+    resource: '@SonataMediaBundle/Resources/config/routing/media.xml'
+    prefix: /media
+
+sonata_user_admin_security:
+    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
+    prefix: /admin
+
+sonata_chunk_upload:
+    resource: '@CoreChunkUploadBundle/Resources/config/routing.yml'
+    prefix: /media-uploader/
+
+#api_login_check:
+#    path: /api/login_check
+#    methods: [POST]
+#gesdinet_jwt_refresh_token:
+#    path:       /api/token/refresh
+#    Controller: gesdinet.jwtrefreshtoken::refresh
+#user_management_bundle:
+#    resource: '@CoreUserBundle/Resources/config/routing.yml'
+#promo.base_bundle:
+#    resource: '@CorePromoBaseBundle/Resources/config/routing.yml'
+#    prefix: /api/promo/base/
+#    name_prefix: promo__base_
+#promo.win_time_bundle:
+#    resource: '@CorePromoWinTimeBundle/Resources/config/routing.yml'
+#    prefix: /api/promo/win_time/
+#    name_prefix: promo__win_time_
+#promo.code_bundle:
+#    resource: '@CorePromoCodeBundle/Resources/config/routing.yml'
+#    prefix: /api/promo/code/
+#    name_prefix: promo__code_
+#promo.win_time_code_bundle:
+#    resource: '@CorePromoWinTimeCodeBundle/Resources/config/routing.yml'
+#    prefix: /api/promo/win_time_code/
+#    name_prefix: promo__win_time_code_
+#app_utility:
+#    resource: '@CoreUtilityBundle/Resources/config/routing.yml'
+#app.swagger_ui:
+#    path: /api/doc
+#    methods: GET
+#    defaults: { _controller: nelmio_api_doc.Controller.swagger_ui }

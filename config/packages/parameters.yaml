@@ -1,0 +1,19 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: 'hu'
+    mailer_sender_email: '%env(resolve:MAILER_SENDER_EMAIL)'
+    mailer_sender_name: '%env(resolve:MAILER_SENDER_NAME)'
+    encrypt_key: '%env(resolve:ENCRYPTION_KEY)%'
+    static_domain: '%env(resolve:SITE_DOMAIN)%'
+    notification_email: '%env(resolve:NOTIFICATION_EMAIL)%'
+    site_domain: '%env(resolve:SITE_DOMAIN)%'
+    google_recaptcha_site_key: '%env(resolve:GOOGLE_RECAPTCHA_SITE_KEY)%'
+    google_recaptcha_secret_key: '%env(resolve:GOOGLE_RECAPTCHA_SECRET)%'
+    locales_available: ['hu']
+    feature_default: false
+    feature_disable_tender_subpages: '%env(default:feature_default:FEATURE_DISABLE_TENDER_SUBPAGES)%'
+

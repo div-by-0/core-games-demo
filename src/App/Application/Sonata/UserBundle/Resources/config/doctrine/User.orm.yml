@@ -1,0 +1,19 @@
+App\Application\Sonata\UserBundle\Entity\User:
+    type: entity
+    table: user__user
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    gedmo:
+        soft_deleteable:
+            field_name: deletedAt
+    fields:
+        deletedAt:
+            type: datetime
+            nullable: true
+    overrides:
+        email:
+            type: text
+            nullable: true

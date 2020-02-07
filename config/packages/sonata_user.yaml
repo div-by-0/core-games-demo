@@ -1,0 +1,5 @@
+sonata_user:
+    manager_type: orm
+    class:
+        user: App\Application\Sonata\UserBundle\Entity\User
+        group: App\Application\Sonata\UserBundle\Entity\Group

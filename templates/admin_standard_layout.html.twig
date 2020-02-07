@@ -1,0 +1,19 @@
+{% extends '@SonataAdmin/standard_layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="icon" href="{{ asset('build/img/favicon.ico') }}">
+    {#{{ encore_entry_link_tags('app') }}#}
+    {% include 'CoreSonataAdminBundle::anticlickjacking.html.twig' %}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
+{% block sonata_wrapper %}
+    {{ parent() }}
+    {#{{ encore_entry_script_tags('app') }}#}
+{% endblock %}
+

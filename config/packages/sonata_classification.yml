@@ -1,0 +1,14 @@
+sonata_classification:
+    class:
+        category:   Core\ClassificationBundle\Entity\Category
+        context:    Core\ClassificationBundle\Entity\Context
+        tag:        Core\ClassificationBundle\Entity\Tag
+        collection: Core\ClassificationBundle\Entity\Collection
+        media:      App\Application\Sonata\MediaBundle\Entity\Media
+
+#    admin:
+#        category:
+#            class:  Core\ClassificationBundle\Admin\CategoryAdmin
+#            Controller: CoreClassificationBundle:CategoryAdmin
+#        tag:
+#            Controller: CoreClassificationBundle:TagAdmin
